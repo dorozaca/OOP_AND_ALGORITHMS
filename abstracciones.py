@@ -49,5 +49,8 @@ if __name__== '__main__':
     print(milavadora.marca)
     print(milavadora.Year)
     milavadora.lavar()
+    
+    #print(id(milavadora))
+    #print(hex(id(milavadora)))
 
     
