@@ -42,14 +42,15 @@ class Animal:
 
 class Mammal(Animal):
     def __init__(self, price, age, family, habit):  #no necesidad de usar _ pata llamar protected attributes de la clase padre
-        super().__init__(price, age, family)
+        super().__init__(price, age, family)           
         self.habit=habit
+        
 
 
-    def muevete(self, habit, alimento='grass'): #cuando se llama esta funcion se necesita pasar un "nuevo habit" que no guardata en el objeto es como si fuera un atributo  nuevo solo para el metodo
-        print(f'Tu habito es {habit} y te gusta comer {alimento}')
+    def muevete(self, alimento='grass'): # no necesitamos agreagar habit aca porque abajo vamos a llamar al habito del self que ya tiene el objeto incorporado desde el constructor
+        print(f'Tu habito es {self.habit} y te gusta comer {alimento}')
 
-        self._comiendo(alimento)
+        self._comiendo(alimento) #aca usa el argumento que recibe la funcion muevete
         self._durmiendo()
 
     def _comiendo(self, alimento):
@@ -63,8 +64,8 @@ class Mammal(Animal):
         return a*b*c
 
     @Deco_class
-    def numero_de_patas(a, b, c): #cuando se usa class_decorator, dentro de una clase no se necesita self dentro de los parametros
-        return a + b + c
+    def numero_de_patas(a, b, c): #cuando se usa class_decorator, dentro de una clase para un metodo no se necesita self dentro de los parametros, porque la class decorator ya tiene su propio self
+        return a + b + c  
 
     
 
@@ -86,9 +87,11 @@ def run():
     print(perro.muevete('Besar'))
     print(perro.numero_de_orejas(4,5,6))
     print(perro.numero_de_patas(10,15,5))
+    
+
     print(perro.Price)
     perro.Price=1000                                 #importante cuando se usa setter no se pasa el valor nuevo entre parentesis se usa igual
-    print(perro.Price)
+    print(perro.Price)                               #para llamar getter tampoco se utiliza ()
     print(vars(perro))                                
     woff=perro.voice()                               #cuando se usa static method se tiene que asignar a una variable
     print(woff)
