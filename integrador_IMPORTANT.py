@@ -18,12 +18,12 @@ class Deco_class:
 
     def __call__(self, *args):
         y=100
-        x=self.function(*args)
+        x=self.function(*args) #hola mundo
         return y+x
 
 
 class Animal:
-    def __init__(self, family, price, age):
+    def __init__(self, family, price, age):#hola
         self.family=family
         self._price=price
         self._age=age
@@ -79,14 +79,14 @@ def run():
         print(keys)
 
     print(7000 in dicty.values())
-    print(('Peru',5000) in dicty.items()) #aca como se usa .items se tiene que usar el item completo entre parentesis para hacer la consulta booleana
+    print(('Peru',5000) in dicty.items()) #aca como se usa .items se tiene que usar el item completo (key and value) entre parentesis para hacer la consulta booleana
 
     print()
 
     perro=Mammal(5000,40,'Canine','Licking')
     print(perro.muevete('Besar'))
     print(perro.numero_de_orejas(4,5,6))
-    print(perro.numero_de_patas(10,15,5))
+    woff=perro.voice() 
     
 
     print(perro.Price)
@@ -96,7 +96,7 @@ def run():
     woff=perro.voice()                               #cuando se usa static method se tiene que asignar a una variable
     print(woff)
 
-
+    
 
 
 
