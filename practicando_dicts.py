@@ -46,8 +46,8 @@ thisdict = {
 for i in thisdict:
   print(i,thisdict[i])
 
-for i,j in thisdict.items():
-  thisdict[i]=j*0.9
+for i,j in thisdict.items(): #modificar valores durante iteracion
+  thisdict[i]=j*0.9          #no olvidar usar thisdict[i]
 
 print(thisdict.items())
 
@@ -58,6 +58,7 @@ for i,j in list(thisdict.items()): #eliminar elemento por llave
 print(thisdict.items())
 
 print(180 in thisdict.values())
+print(('year',176.4) in thisdict.items()) #cuando queremos usar membership test con .items() necesitamos poner key and values en tuplas
 
 thisdict['Chevy']=5000 #asi se agrega elemento a dictionary / tuple add no existe hay que convertirla a list // list si usa appened
 print(thisdict.items())
@@ -70,9 +71,17 @@ print(dict2.items())
 dict3={}   #filtrar por valor y agregar a segundo diccionario
 for i,j in thisdict.items():
   if j <250:
-    dict3[i]=j
+    dict3[i]=j # esta es la clave para clonar items que cumplen la condicion
 
 print(dict3.items())
+
+ventas={'Enero':500, 'Febrero':800, 'Marzo':1350, 'Abril':1500, 'Mayo':1700}
+
+container=0
+for values in ventas.values(): #solo funciona con .value()
+  container+=values
+
+print(values)
 
 
   
